@@ -8,15 +8,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
-    "start": "node build/server.cjs"
+    "start": "node build/server.cjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "10.0.1",
     "@types/node": "^26.1.0",
+    "eslint": "10.6.0",
+    "globals": "17.7.0",
+    "jiti": "2.7.0",
     "tsup": "^8.5.1",
     "tsx": "^4.23.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "8.63.0"
   },
   "dependencies": {
     "dotenv": "17.4.2",

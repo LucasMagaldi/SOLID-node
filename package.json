@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "I developed an application for gym check-ins. Here, you will learn about SOLID principles, design patterns, using Docker to set up the database, JWT and refresh tokens, RBAC, and various other concepts.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -22,3 +22,21 @@ model User {
 
   @@map("users")
 }
+
+model CheckIn {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  @@map("check_ins")
+}
+
+model Gym {
+  id        String   @id @default(uuid())
+  name      String
+  phone     String?
+  latitude  Decimal
+  longitude Decimal
+  createdAt DateTime @default(now())
+
+  @@map("gyms")
+}

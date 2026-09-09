@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { hash } from "bcryptjs";
 import type { UserRepository } from "../repositories/user-repository";
+import { UserAlreadyExistsError } from "./error/user-already-exists-error";
 
 interface RegisterUseCaseRequest {
     name: string;
@@ -21,7 +22,7 @@ export class RegisterUseCase {
         const userWithSameEmail = await this.userRepository.findByEmail(email);
 
         if (userWithSameEmail) {
-            throw new Error("User with this email already exists");
+            throw new UserAlreadyExistsError();
         }
 
         await this.userRepository.create({

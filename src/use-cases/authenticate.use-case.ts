@@ -13,7 +13,7 @@ interface AuthenticateUseCaseResponse {
 };
 
 export class AuthenticateUseCase {
-    // eslint-disable-next-line no-unused-vars
+     
     constructor(private userRepository: UserRepository) {}
 
     async execute({ email, password }: AuthenticateUseCaseRequest): Promise<AuthenticateUseCaseResponse> {

@@ -16,7 +16,6 @@ export default defineConfig([
   {
     rules: {
       "no-duplicate-imports": "error",
-      "no-unused-vars": "error",
       "prefer-const": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "warn",

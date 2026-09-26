@@ -14,8 +14,11 @@ export class CheckInUseCase {
     constructor(private checkInRpository: CheckInRepository) {}
 
     async execute({ userId, gymId }: CheckInUseCaseRequest) : Promise<CheckInUseCaseResponse> {
-        const checkIn = await this.checkInRpository.create({ userId, gymId })
-
+        const checkInDate = new Date();
+        const isAlreadyCheckIn = await this.checkInRpository.findByUserOnDate(userId, checkInDate);
+        
+        if(isAlreadyCheckIn) throw new Error
+        const checkIn = await this.checkInRpository.create({ userId, gymId });
 
         return { checkIn } 
     }
